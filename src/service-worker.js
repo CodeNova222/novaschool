@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 const CACHE_NAME = 'my-pwa-cache';
 const urlsToCache = [
   '/',
@@ -21,3 +22,4 @@ self.addEventListener('fetch', (event) => {
     })
   );
 });
+/* eslint-enable no-restricted-globals */
