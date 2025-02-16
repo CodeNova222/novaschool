@@ -5,11 +5,11 @@ const urlsToCache = [
   '/index.html',
   '/static/js/main.js',
   '/static/css/main.css',
-  '/offline.html',  // Add an offline fallback page
 ];
 
 // Install event - cache important files
 self.addEventListener('install', (event) => {
+  self.skipWaiting(); // Make sure the service worker activates immediately
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
@@ -22,11 +22,7 @@ self.addEventListener('install', (event) => {
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => {
-      // Return cached response or fetch from the network
-      return response || fetch(event.request).catch(() => {
-        // If both cache and network fail, return the offline page
-        return caches.match('/offline.html');
-      });
+      return response || fetch(event.request);  // Fetch from network if not cached
     })
   );
 });
