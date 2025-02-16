@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 12px 0;
+    padding: 8px 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for elevated look */
     border-top: 1px solid #333; /* Light border to define separation */
     z-index: 1000;

@@ -1,5 +1,6 @@
 import { useState ,useEffect  } from "react";
 import image_book from "./../assets/images/kurdi.jpg";
+import profile_image from "./../assets/images/profile.png";
 import "boxicons/css/boxicons.min.css";
 import "./../assets/styles/home.css"
 const Home = () => {
@@ -58,10 +59,10 @@ const Home = () => {
         onClick={toggleQuote}>
           <div className="top-header">
             <div className="profile">
-              <strong>ئارێز بەشدار</strong>
               <div className="img-profile">
-                <img src={image_book} alt=""/>
+                <img src={profile_image} alt=""/>
               </div>
+              <strong>ئارێز بەشدار</strong>
             </div>
             <div className="icons">
               <i className='bx bx-filter-alt'></i>
@@ -98,7 +99,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="card-title">خشتەی ئەمڕۆ :</div>
+          <div className="card-title">بابەتەكان :</div>
           <div className="menus">
           {menuItems.map((item) => (
             <button
@@ -115,7 +116,7 @@ const Home = () => {
             <p>بینینی هەمووی</p>
           </div>
           <div className="cards-main books-main">
-            <div className="card-title">خشتەی ئەمڕۆ :</div>
+            <div className="card-title">وانەكان :</div>
             <div className="books">
               <div className="book">
                 <div className="image-book">

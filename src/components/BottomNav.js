@@ -8,8 +8,8 @@ export default function BottomNav() {
       <NavItem to="/" icon="bx bx-home" label="سەرەتا" />
       <NavItem to="/library" icon="bx bx-calculator" label="حاسیبە" />
       <NavItem to="/profile" icon="bx bx-calendar" label="خشتەكان" />
-      <NavItem to="/profile" icon="bx bxs-quote-alt-right" label="وتەكان" />
-      <NavItem to="/profile" icon="bx bx-cog" label="ڕیكخستەكان" />
+      <NavItem to="/quotes" icon="bx bxs-quote-alt-right" label="وتەكان" />
+      <NavItem to="/settings" icon="bx bx-cog" label="ڕیكخستەكان" />
     </nav>
   );
 }
