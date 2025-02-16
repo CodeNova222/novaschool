@@ -1,0 +1,212 @@
+.home{
+    padding: 0px;
+}
+.home .header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #7C4DFF;
+    border-radius: 0 0 25px 25px;
+    padding: 15px;
+    position: relative;
+}
+.home .header .top-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    direction: rtl;
+    font-size: 25px;
+}
+.home .header .top-header .profile{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.home .header .top-header .profile .img-profile{
+    width: 50px;
+    height: 50px;
+}
+.home .header .quote-header {
+    direction: rtl;
+    padding: 0 15px; /* Keep horizontal padding, remove vertical */
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    max-height: 0; /* Use max-height instead of height */
+    overflow: hidden;
+  }
+  
+  .home .header .quote-header span {
+    text-align: center;
+  }
+  
+  .home .header .quote-header.expanded {
+    max-height: 200px; /* Adjust this value based on content */
+    padding: 15px;
+  }
+  
+.home .header .line-header {
+    width: 100px;
+    height: 10px;
+    background: white;
+    border-radius: 50px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+.home .container{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.home .schedule-today{
+    padding:0 8px;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 60px;
+}
+.home .schedule-today .schedule-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.home .schedule-today .schedule-container .today{
+    background: #7C4DFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    font-size: 12px;
+    color: white;
+    border-radius: 10px;
+}
+.home .schedule-today .schedule-container .today span{
+    background: #5D4B8E;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    width: 20px;
+    height: 20px;
+}
+.home .schedule-today .schedule-container .subjects{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 5px;
+    justify-content: space-between;
+}
+.home .schedule-today .schedule-container .subjects span{
+    background: #5D4B8E;
+    padding: 4px;
+    color: white;
+    border-radius: 8px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.home .menus{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    direction: rtl;
+}
+.home .menus .menu-button{
+    padding: 10px;
+    background: #5D4B8E;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 12px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-family: Rabar;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.home .menus .menu-button.active{
+    background: #7C4DFF;
+}
+.home .select-subject{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    direction: rtl;
+    margin: 10px 0;
+}
+.home .select-subject p{
+    cursor: pointer;
+    color: #FF4C4C;
+}
+.home .cards-main{
+    background: #161B22;
+    padding: 10px;
+    border-radius: 8px;
+}
+.home .books-main{
+    width: 100%;
+}
+.home .cards-main .books {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    border-radius: 8px;
+    direction: rtl;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    flex-wrap: nowrap; /* Prevents wrapping to the next line */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #888 transparent; /* Scrollbar color */
+}
+
+/* Optional: Customize the scrollbar for Webkit browsers */
+.home .cards-main .books::-webkit-scrollbar {
+    height: 8px;
+}
+
+.home .cards-main .books::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.home .cards-main .books::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.home .cards-main .books .book {
+    flex: 0 0 auto; /* Ensures books don't shrink */
+}
+
+.home .cards-main .books .book .image-book {
+    width: 80px;
+    height: 120px;
+}
+
+.home .cards-main .books .book .image-book img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}

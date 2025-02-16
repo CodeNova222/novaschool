@@ -1,0 +1,85 @@
+
+.login .header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0;
+    font-size: 25px;
+}
+.login .header img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+.login .context{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.login .context p{
+    color: #d3d3d3;
+    font-size: 12px;
+}
+.login .fields .field .password-field{
+    width: 100%;
+    position: relative;
+}
+.login .fields .field .password-field i{
+    color: white;
+    position: absolute;
+    left: 20px;
+    bottom: 17px;
+    font-size: 20px;
+}
+.login .fields .forget-password{
+    width: 100%;
+    direction: rtl;
+}
+
+.login .fields .forget-password button{
+    background: none;
+    outline: none;
+    border: none;
+    color: #FF4C4C;
+    font-family: Rabar;
+    cursor: pointer;
+}
+.login .buttons{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.login .buttons button:first-child{
+    background: #7C4DFF;
+}
+.login .buttons button{
+    height: 50px;
+    font-size: 16px;
+    border: 2px solid #7C4DFF;
+    border-radius: 10px;
+    background: none;
+    color: white;    
+    font-family: Rabar;
+    cursor: pointer;
+}
+.register .header{
+    margin: 0;
+    justify-content: space-between;
+    direction: rtl;
+    font-size: 20px;
+}
+.register .header i{
+    font-size: 40px;
+    cursor: pointer;
+}
+.register .buttons{
+    margin-top: 40px;
+}
+
+
+

@@ -1,0 +1,67 @@
+@font-face {
+  font-family: Rabar;
+  src: url(./assets/fonts/Rabar_013.ttf);
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+/* page */
+.page{
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: white;
+  font-family: Rabar;
+}
+/* fields */
+.fields{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.fields .field{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+  gap: 5px;
+}
+
+.fields .field input , .field select{
+  width: 100%;
+  height: 50px;
+  outline: none;
+  background: none;
+  border: 2px solid #7C4DFF;
+  padding: 10px;
+  color: white;
+  font-size: 16px;
+  font-family: Rabar;
+  border-radius: 10px;
+}
+.field select option {
+  background: #333; /* Same as select */
+  color: white;
+}
+.fields .field input::placeholder{
+  text-align: right;
+}
+.line{
+  width: 100%;
+  height: 2px;
+  border-radius: 10px;
+  background: #7C4DFF;
+  margin: 15px 0;
+}
+.card-title{
+  width: 100%;
+  direction: rtl;
+  font-size: 18px;
+}
