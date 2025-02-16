@@ -2,9 +2,10 @@
 const CACHE_NAME = 'my-pwa-cache-v1';
 const urlsToCache = [
   '/',
-  '/index.html',
   '/static/js/main.js',
   '/static/css/main.css',
+  '/manifest.json',  // Make sure to include these files
+  '/favicon.ico'     // If you have a favicon
 ];
 
 // Install event - cache important files
@@ -22,7 +23,10 @@ self.addEventListener('install', (event) => {
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => {
-      return response || fetch(event.request);  // Fetch from network if not cached
+      return response || fetch(event.request).catch(() => {
+        // Fallback to cache (root page) when offline or on failure
+        return caches.match('/');
+      });
     })
   );
 });
