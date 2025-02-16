@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     // Ensure the path to the service worker is correct. 
@@ -22,3 +24,6 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+serviceWorkerRegistration.register();
+
