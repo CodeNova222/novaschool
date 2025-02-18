@@ -6,7 +6,7 @@ export default function BottomNav() {
   return (
     <nav className="bottom-nav">
       <NavItem to="/" icon="bx bx-home" label="سەرەتا" />
-      <NavItem to="/library" icon="bx bx-calculator" label="حاسیبە" />
+      <NavItem to="/calculate" icon="bx bx-calculator" label="حاسیبە" />
       <NavItem to="/profile" icon="bx bx-calendar" label="خشتەكان" />
       <NavItem to="/quotes" icon="bx bxs-quote-alt-right" label="وتەكان" />
       <NavItem to="/settings" icon="bx bx-cog" label="ڕیكخستەكان" />

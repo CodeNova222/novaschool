@@ -1,0 +1,122 @@
+.calculator-container {
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.calculator-display {
+  width: 100%;
+  padding: 20px;
+  text-align: left;
+  color: #d8d8d8;
+  min-height: 120px; /* Adjust height of the display */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  line-height: 1.2;
+  font-size: calc(1.5rem + 1vw);
+}
+
+.calculator-result {
+  width: 100%;
+  padding: 10px;
+  font-size: 3rem; /* Adjust font size of result */
+  text-align: right;
+  display: flex;
+  align-items: flex-end; /* Adjust alignment to flex-start or center if needed */
+  justify-content: flex-end; /* Adjust content alignment */
+  color: #f8f8f8;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal; /* Allow normal wrapping behavior */
+  word-break: break-word; /* Ensure breaking long words */
+  flex-grow: 1; 
+}
+
+.calculator-keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 15px;
+  height: auto; /* Remove fixed height and let it grow */
+  max-height: 50%; /* Restrict keypad height to half the container */
+  background: #161B22;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.calculator-key {
+  width: 100%;
+  height: 60px;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  background: #3a4a61;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.calculator-key:active {
+  background: #888;
+}
+
+.calculator-key:nth-child(4n) {
+  background: #ff9500;
+}
+
+.calculator-key:nth-child(4n):hover {
+  background: #e08e00;
+}
+
+.calculator-key:last-child {
+  background: #00cc66;
+}
+
+.calculator-key:last-child:hover {
+  background: #00994d;
+}
+
+.modal-calculate{
+  position: fixed;
+  bottom: 85px;
+  left: 15px;
+  background: #0D1117;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  font-family: Rabar;
+  opacity: 0;
+  height: 0;
+  transition: opacity 0.3s ease, height 0.3s ease;
+
+}
+
+.modal-calculate.show {
+  opacity: 1;
+  height: 200px;
+}
+.modal-calculate li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  direction: rtl;
+  font-size: 20px;
+  cursor: pointer;
+  background: #222;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+.modal-content li.active {
+  background-color: #2D7A78;  /* Or any color you want to highlight the active item */
+}
+
+
