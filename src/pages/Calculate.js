@@ -9,6 +9,12 @@ export default function Calculator() {
   const [activeMode, setActiveMode] = useState("Math");
   const [backspaceTimeout, setBackspaceTimeout] = useState(null);
   const navigate = useNavigate();
+  useEffect(() => {
+    const metaTag = document.querySelector('meta[name="theme-color"]');
+    if (metaTag) {
+      metaTag.setAttribute('content', '#161B22');
+    }
+  }, []);
   const modeTexts = {
     Math: "حاسیبەی بیركاری",
     Science: "حاسیبەی زانستی",
@@ -21,14 +27,14 @@ export default function Calculator() {
       setShowModal(true);
       return;
     }
-
-    if (value === "backspace" || (value === "AC" && input !== "0")) {
+  
+    if (value === "backspace") {
       if (input !== "0") {
-        setInput(input.slice(0, -1) || "0"); // Remove last character
+        setInput(input.slice(0, -1) || "0");
       }
       return;
     }
-
+  
     switch (value) {
       case "AC":
         setInput("0");
@@ -41,29 +47,52 @@ export default function Calculator() {
           setResult("Error");
         }
         break;
-      case "±":
-        const lastNumberMatch = input.match(/(-?\d+(\.\d+)?)/);
-        if (lastNumberMatch) {
-          const lastNumber = lastNumberMatch[0];
-          setInput(input.replace(lastNumber, lastNumber.startsWith("-") ? lastNumber.slice(1) : `(-${lastNumber})`));
-        }
-        break;
       case "%":
         setInput(input + "%");
         break;
       case "x":
         if (!/[\+\-\*\/]$/.test(input)) setInput(input + "*");
         break;
-      case "+":
       case "-":
+        if (input === "" || input === "0") {
+          setInput("-");
+        } else if (!/[\+\-\*\/]$/.test(input)) {
+          setInput(input + "-");
+        }
+        break;
+      case "+":
       case "*":
       case "/":
         if (!/[\+\-\*\/]$/.test(input)) setInput(input + value);
         break;
+      case "√x":
+        setInput(`sqrt()`);
+        setTimeout(() => {
+          const inputElement = document.querySelector(".calculator-display input");
+          inputElement.focus();
+  
+          // Set the cursor inside the parentheses (position 5)
+          inputElement.setSelectionRange(5, 5);  // 5 is the position after 'sqrt('
+        }, 0);
+        break;
+      case "∛x":
+        setInput(`cbrt()`);
+        setTimeout(() => {
+          const inputElement = document.querySelector(".calculator-display input");
+          inputElement.focus();
+  
+          // Set the cursor inside the parentheses (position 5)
+          inputElement.setSelectionRange(5, 5);  // 5 is the position after 'cbrt('
+        }, 0);
+        break;
+      // Handle other cases similarly
       default:
         setInput(input === "0" && value !== "." ? value : input + value);
     }
   };
+  
+  
+  
 
   const handleClickOutside = (e) => {
     if (!e.target.closest('.modal-calculate') && !e.target.closest('.modal-content')) {
@@ -98,10 +127,29 @@ export default function Calculator() {
         <span>{modeTexts[activeMode]}</span>
         <i onClick={() => navigate("/")} className="bx bx-chevron-left"></i>
       </div>
-      <div className="calculator-display">{input || "0"}</div>
+      <div class="calculator-display" contenteditable="true">{input || "0"}</div>
       <div className="calculator-result">{result}</div>
+      {activeMode === "Science" && (
+    <div className="science-pad">
+      {[
+        "(", ")", "[", "]", "√x", "∛x", "x²", "x^x", "x⁻¹",
+        "x/y", "log", "ln", "−", "hyp", "sin", "cos", "tan",
+        "sin⁻¹", "cos⁻¹", "tan⁻¹", "RCL", "STO", "ENG"
+      ].map((item) => (
+        <button
+          key={item}
+          onClick={(e) => handleClick(item, e)}
+          className="science-key"
+        >
+          {item}
+        </button>
+      ))}
+    </div>
+  )}
+
+
       <div className="calculator-keypad">
-        {["AC", "±", "%", "/", "7", "8", "9", "x", "4", "5", "6", "-", "1", "2", "3", "+", "icon", "0", ".", "="].map((item) => (
+        {["backspace", "AC", "%", "/", "7", "8", "9", "x", "4", "5", "6", "-", "1", "2", "3", "+", "icon", "0", ".", "="].map((item) => (
           <button
             key={item}
             onClick={(e) => handleClick(item, e)}
@@ -110,7 +158,7 @@ export default function Calculator() {
             onMouseLeave={stopBackspaceHold}
             className="calculator-key"
           >
-            {item === "backspace" || (item === "AC" && input !== "0") ? <i className="bx bx-left-arrow-alt"></i> : 
+            {item === "backspace" ? <i className="bx bx-left-arrow-alt"></i> : 
              item === "icon" ? <i className="bx bxs-calculator"></i> : item}
           </button>
         ))}

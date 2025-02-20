@@ -2,11 +2,22 @@
   font-family: Rabar;
   src: url(./assets/fonts/Rabar_013.ttf);
 }
+@font-face {
+  font-family: Diwan;
+  src: url(./assets/fonts/Diwani\ Letter.ttf);
+}
+@font-face {
+  font-family: Nizar;
+  src: url(./assets/fonts/UniMahanNurhan.ttf);
+}
+@font-face {
+  font-family: Unimahan;
+  src: url(./assets/fonts/UniMahanNurhan.ttf);
+}
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
 /* page */
 .page{
