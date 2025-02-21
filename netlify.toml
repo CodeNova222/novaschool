@@ -1,0 +1,2 @@
+[build]
+  functions = "functions"  # Netlify will look for serverless functions in the 'functions' directory
