@@ -1,0 +1,89 @@
+
+.settings .header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.settings .header .profile-img{
+    width: 120px;
+    height: 120px;
+}
+.settings .header .profile-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 60px;
+}
+.settings .header .context{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    margin: 5px 0;
+    font-family: Rabar;
+}
+.settings .header .context strong{
+    font-size: 32px;
+}
+.settings .header .context span{
+    color: #CCC;
+}
+.settings .header .buttons button{
+    width: 120px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Rabar;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.settings .fields{
+    background: #161B22;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+}
+.settings .fields .field{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+.settings .fields .field.icon{
+    justify-content: space-between;
+}
+.settings .fields .field .text{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.settings .fields .field:last-child{
+    border: none;
+}
+.settings .line{
+    background: #CCC;
+    height: 1px;
+    margin: 0;
+}
+.settings .title-card{
+    direction: rtl;
+    padding: 5px;
+    color: #CCC;
+    font-size: 14px;
+}
+.settings .fields.logout{
+    background: #7d1a1a7a;
+    cursor: pointer;
+}
+.settings .fields .field.icon .icon i{
+    font-size: 25px;
+    transition: all .3s ease-in-out;
+    color: #7D1A1A;
+}
+.settings .fields .field.icon .icon i.bxs-toggle-right{
+    color: #1E5631;
+}

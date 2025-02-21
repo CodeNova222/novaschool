@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import logo_image from "./../assets/images/logo.webp";
 import './../assets/styles/login.css'
 import "boxicons/css/boxicons.min.css";
@@ -11,10 +12,25 @@ const Login = () => {
         username_email : "",
         password : ""
     })
+    const [error, setError] = useState("");
+
     const handleChange = (e) => {
         const {name , value} = e.target;
         setDatas((prev) => ({...prev , [name]:value}))
     }
+    const handleLogin = async () => {
+        try {
+          const response = await axios.post("http://localhost:5000/login", {
+            datas
+          });
+    
+          localStorage.setItem("user", response.data.token);
+          setError(""); 
+        } catch (err) {
+          setError(err.response?.data?.error || "Login failed");
+          console.log(error)
+        }
+      };
     return (
       <div className="page login">
         <div className="header">
@@ -30,7 +46,7 @@ const Login = () => {
                 <label>هەژماری ئەلیكترنی</label>
                 <input
                     type="text"
-                    name="email"
+                    name="username_email"
                     placeholder="هەژمار بنووسە"
                     value={datas.email}
                     onChange={handleChange}
@@ -57,7 +73,7 @@ const Login = () => {
             </div>
         </div>
         <div className="buttons">
-            <button><span>چوونەژوورەوە</span></button>
+            <button onClick={() => handleLogin()}><span>چوونەژوورەوە</span></button>
             <div className="line"></div>
             <button onClick={() => navigate("/register")}><span>درووستكردنی هەژماری تازە</span></button>
             <button>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './../assets/styles/login.css'
 import "boxicons/css/boxicons.min.css";
+import axios from "axios";
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -12,9 +13,21 @@ const Register = () => {
         gender : "",
         grade : "",
     })
+
     const handleChange = (e) => {
         const {name , value}  = e.target;
         setDatas((prev) => ({ ...prev, [name]: value }));
+    }
+    const handleSubmit = async () => {
+        try {
+            const response = await axios.post("http://localhost:5000/register", {
+                datas
+              });
+                localStorage.setItem("user", response.data.token);
+
+        } catch (err) {
+            console.log(err)
+        }
     }
     return (
       <div className="page login register">
@@ -73,7 +86,7 @@ const Register = () => {
             </div>
         </div>
         <div className="buttons">
-            <button><span>درووستكردنی هەژمار</span></button>
+            <button onClick={() => handleSubmit()}><span>درووستكردنی هەژمار</span></button>
         </div>
       </div>
     );
