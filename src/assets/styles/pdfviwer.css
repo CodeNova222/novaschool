@@ -1,0 +1,54 @@
+.pdfviwer{
+    padding: 0;
+    background: white;
+}
+.pdfviwer .header{
+    width: 100%;
+    display: flex;
+}
+.pdfviwer .container{
+    height: 80vh;
+    border-radius: 10px;
+}
+.rpv-toolbar-button.print {
+    display: none;
+}
+[data-testid="theme__switch-menu"] {
+  display: none;
+}
+
+/* Hide the menu item with the label "Open file" */
+[data-testid="open__menu"] {
+  display: none;
+}
+
+/* Hide the menu item with the label "Print" */
+[data-testid="print__menu"] {
+  display: none;
+}
+
+/* Hide the menu item with the label "Download" */
+[data-testid="get-file__download-menu"] {
+  display: none;
+}
+[data-testid="full-screen__enter-menu"] {
+  display: none;
+}
+[data-testid="rotate__forward-menu"] {
+  display: none;
+}
+[data-testid="rotate__backward-menu"] {
+  display: none;
+}
+[data-testid="properties__menu"] {
+  display: none;
+}
+[data-testid="selection-mode__text-menu"] {
+  display: none;
+}
+[data-testid="selection-mode__hand-menu"] {
+  display: none;
+}
+.rpv-core__menu-divider{
+    display: none;
+}

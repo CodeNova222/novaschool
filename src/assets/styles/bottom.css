@@ -4,14 +4,13 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #0D1117; /* Dark background similar to Facebook's */
+    background-color: #F8F9FA; /* Dark background similar to Facebook's */
     color: #fff;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 8px 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for elevated look */
-    border-top: 1px solid #333; /* Light border to define separation */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     z-index: 1000;
     border-radius: 25px 25px 0 0;
     direction: rtl;
@@ -22,7 +21,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #9e9e9e; /* Slightly faded text */
+    color: #777; /* Slightly faded text */
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
   }
@@ -35,16 +34,16 @@
   /* Label Style */
   .bottom-nav .nav-item span {
     font-size: 12px; /* Small text for label */
-    color: #9e9e9e;
+    color: #777;
     font-family: Rabar;
   }
 
 .bottom-nav .nav-item.active {
-    color: #ffffff; /* Blue color for active item */
+    color: black; /* Blue color for active item */
     transform: translateY(-2px); /* Small upward movement */
   }
   .bottom-nav .nav-item.active span {
-    color: #ffffff; /* Blue color for active item */
+    color: black; /* Blue color for active item */
 
   }
   

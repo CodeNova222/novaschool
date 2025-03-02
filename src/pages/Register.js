@@ -24,6 +24,7 @@ const Register = () => {
                 datas
               });
                 localStorage.setItem("user", response.data.token);
+                console.log(response.data.token)
 
         } catch (err) {
             console.log(err)

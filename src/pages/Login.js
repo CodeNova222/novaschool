@@ -23,8 +23,7 @@ const Login = () => {
           const response = await axios.post("http://localhost:5000/login", {
             datas
           });
-    
-          localStorage.setItem("user", response.data.token);
+          localStorage.setItem("user", JSON.stringify(response.data));
           setError(""); 
         } catch (err) {
           setError(err.response?.data?.error || "Login failed");

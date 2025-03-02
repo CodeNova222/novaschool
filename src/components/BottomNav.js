@@ -10,6 +10,7 @@ export default function BottomNav() {
       <NavItem to="/profile" icon="bx bx-calendar" label="خشتەكان" />
       <NavItem to="/quotes" icon="bx bxs-quote-alt-right" label="وتەكان" />
       <NavItem to="/settings" icon="bx bx-cog" label="ڕیكخستەكان" />
+      <NavItem to="/pdf" icon="bx bx-cog" label="ڕیكخستەكان" />
     </nav>
   );
 }
