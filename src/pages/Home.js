@@ -2,22 +2,27 @@ import { useEffect } from "react";
 import profileImage from "./../assets/images/profile.png";
 import "boxicons/css/boxicons.min.css";
 import "./../assets/styles/home.css";
+import { useNavigate } from "react-router-dom";
+const Card = ({ title, image, backgroundColor, url }) => {
+  const navigate = useNavigate();
 
-const Card = ({ title, image, backgroundColor }) => (
-  <div className="card" style={{ backgroundColor }}>
-    <div className="image-back">
-      <img src={require('./../assets/images/bubbles.png')} alt="background"/>
+  return (
+    <div onClick={() => navigate(url)} className="card" style={{ backgroundColor }}>
+      <div className="image-back">
+        <img src={require("./../assets/images/bubbles.png")} alt="background" />
+      </div>
+      <div className="image-card">
+        <img src={image} alt={title} />
+      </div>
+      <div className="card-content">{title}</div>
     </div>
-    <div className="image-card">
-      <img src={image} alt={title} />
-    </div>
-    <div className="card-content">{title}</div>
-  </div>
-);
+  );
+};
 
 const SuggestionCard = ({ title }) => <div className="sug-card"><span>{title}</span></div>;
 
 const Home = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#7C4DFF');
   }, []);
@@ -26,8 +31,9 @@ const Home = () => {
   const cardItems = ["كتێبەكان", "مەلزەمەكان", "ڤیدیۆكان", "ئەسیلەكان"].map((title, i) => ({
     title,
     image: require(`./../assets/images/${["books", "book", "blended-learning", "essay"][i]}.png`),
-    backgroundColor: colors[i]
-  }));
+    backgroundColor: colors[i],
+    url: ["/bookshow", "/requirements", "/videos", "/tools"][i] // Define URLs here
+}));
 
   const suggestions = [
     "لیستی باشترین مامۆستاكان بۆ پۆلی 12",
