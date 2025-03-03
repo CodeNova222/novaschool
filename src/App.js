@@ -10,7 +10,6 @@ import Calculator from './pages/Calculate';
 import Quotes from './pages/Quote';
 import Settings from './pages/Settings.js';
 import PDFViewer from './pages/PdfViwer.js';
-import Chat from './pages/Aiassistant.js';
 import Booksshow from './showpages/Booksshow.js';
 function App() {
   return (
@@ -44,7 +43,6 @@ function AppContent() {
         <Route path="/quotes" element={<Quotes />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/pdf" element={<PDFViewer />} />
-        <Route path="/chat" element={<Chat />} />
         <Route path="/bookshow" element={<Booksshow />} />
       </Routes>
       {location.pathname !== "/calculate" && location.pathname !== "/pdf" && <BottomNav />}
