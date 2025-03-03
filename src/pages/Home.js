@@ -22,7 +22,6 @@ const Card = ({ title, image, backgroundColor, url }) => {
 const SuggestionCard = ({ title }) => <div className="sug-card"><span>{title}</span></div>;
 
 const Home = () => {
-  const navigate = useNavigate();
   useEffect(() => {
     document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#7C4DFF');
   }, []);
